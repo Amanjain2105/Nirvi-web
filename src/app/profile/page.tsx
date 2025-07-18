@@ -17,9 +17,7 @@ const ProfilePage = async () => {
   }
 
   const orderRes = await wixClient.orders.searchOrders({
-    search: {
-      filter: { "buyerInfo.contactId": { $eq: user.member?.contactId } },
-    },
+    filter: { "buyerInfo.contactId": { $eq: user.member?.contactId } },
   });
 
   return (
